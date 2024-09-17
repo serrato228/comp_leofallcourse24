@@ -2,19 +2,62 @@
 //
 
 #include <iostream>
+#include <string>
+#include <cmath>
+#include <iomanip>
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    //Obtains name input
+    std::string name;
+    std::cout << "Please enter your name: ";
+    std::getline(std::cin, name);
+   
+
+
+    int lab1Grade;
+    int lab2Grade;
+    int lab3Grade;
+    int lab4Grade;
+    double numberOfLabs = 4;
+    std::cout << "Please enter lab 1: ";
+    std::cin >> lab1Grade;
+    std::cout << "Please enter lab 2: ";
+    std::cin >> lab2Grade;
+    std::cout << "Please enter lab 3: ";
+    std::cin >> lab3Grade;
+    std::cout << "Please enter lab 4: ";
+    std::cin >> lab4Grade;
+    double labsAverage = ((lab1Grade + lab2Grade + lab3Grade + lab4Grade) / numberOfLabs);
+
+    int exam1Grade;
+    int exam2Grade;
+    int exam3Grade;
+    double numberOfExams = 3;
+    std::cout << "Please enter exam 1: ";
+    std::cin >> exam1Grade;
+    std::cout << "Please enter exam 2: ";
+    std::cin >> exam2Grade;
+    std::cout << "Please enter exam 3: ";
+    std::cin >> exam3Grade;
+    double examsAverage = ((exam1Grade + exam2Grade + exam3Grade) / numberOfExams); 
+
+    std::cout << (name) << ", your lab grades are: " << std::endl;
+    std::cout << "Lab 1 = " << (lab1Grade) << std::endl;
+    std::cout << "Lab 2 = " << (lab2Grade) << std::endl;
+    std::cout << "Lab 3 = " << (lab3Grade) << std::endl;
+    std::cout << "Lab 4 = " << (lab4Grade) << std::endl;
+
+    std::cout << (name) << ", your exam grades are: " << std::endl;
+    std::cout << "Exam 1 = " << (exam1Grade) << std::endl;
+    std::cout << "Exam 2 = " << (exam2Grade) << std::endl;
+    std::cout << "Exam 3 = " << (exam3Grade) << std::endl;
+
+    std::cout << (name) << ", your class grade is: " << std::endl;
+    std::cout << "Lab's Average (65%) = " << (labsAverage) << std::endl;
+    std::cout << "Exam's Average (20%) = " << (examsAverage) << std::endl;
+    
+    double percentageLabs = 0.75
+        //double classAverage = ((labsAverage * percentageLabs) + (examsAverage * percentageExams));
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
