@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{c8b31437-e5a7-4475-bb73-bcdc0427e753}</ProjectGuid>
-    <RootNamespace>GradeCalculator</RootNamespace>
+    <ProjectGuid>{655255e7-97dc-47d6-a261-62b2adf0abae}</ProjectGuid>
+    <RootNamespace>MonthlyInterestRatesCalculator</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="GradeCalculator.cpp" />
+    <ClCompile Include="MonthlyInterestRatesCalculator.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
