@@ -51,7 +51,7 @@ int main()
     float monthlyPayment = 1;
     //cout << "How much do you want to pay each month?: ";
     //cin >> monthlyPayment;
-
+    
  
     while (monthlyPayment < 0 || monthlyPayment > initialLoan)
     {
