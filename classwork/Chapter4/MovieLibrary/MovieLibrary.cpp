@@ -23,13 +23,21 @@ struct Movie
 };
 
 //Integral data type with named values
-enum MenuCommand
+enum class MenuCommand
 {
-    MC_AddMovie,
-    MC_EditMovie,
-    MC_DeleteMovie,
-    MC_ViewMovie
+    //MC_Begin,
+    AddMovie = 1,    //const int MenuCommand::MC_AddMovie = 0;
+    EditMovie,
+    DeleteMovie,
+    ViewMovie
+    //MC_End
 };
+
+//enum class TestEnum
+//{
+//    MC_AddMovie
+//};
+//TestEnum testValue = TestEnum::MC_AddMovie;//MC_AddMovie;//TestEnum::MC_AddMovie;
 
 int main()
 {
@@ -83,29 +91,32 @@ int main()
     switch (input)
     {
         case 'A':
-        case 'a': menuCommand = 1; break;
+        case 'a': menuCommand = MenuCommand::AddMovie; break;
 
         case 'E':
-        case 'e': menuCommand = 2; break;
+        case 'e': menuCommand = MenuCommand::EditMovie; break;
 
         case 'D':
-        case 'd': menuCommand = 3; break;
+        case 'd': menuCommand = MenuCommand:: DeleteMovie; break;
 
         case 'V':
-        case 'v': menuCommand = 4; break;
+        case 'v': menuCommand = MenuCommand::ViewMovie; break;
 
         default: cout << "Bad input" << endl; break;
     };
 
+    //int shouldntWork = MenuCommand::AddMovie;
+    //menuCommand = (MenuCommand)1;
+
     //// Handle menu command
     switch (menuCommand)
     {
-        case MenuCommand::MC_AddMovie:
-        case MenuCommand::MC_EditMovie:
-        case MenuCommand::MC_DeleteMovie:
-        case MenuCommand::MC_ViewMovie: cout << "Not implemented" << endl; break;
+        case MenuCommand::AddMovie:
+        case MenuCommand::EditMovie:
+        case MenuCommand::DeleteMovie:
+        case MenuCommand::ViewMovie: cout << "Not implemented" << endl; break;
     };
-
+    
     ////// Add a new movie
     //Create a new movie
     Movie movie;// = {0};
