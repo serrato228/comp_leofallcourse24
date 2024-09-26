@@ -44,7 +44,7 @@ int main()
         cout << endl;
     };
 
-
+    
     float interestRate = interestRatePercentage / 100;
 
 
