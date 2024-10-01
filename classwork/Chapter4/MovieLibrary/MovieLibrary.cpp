@@ -20,6 +20,8 @@ struct Movie
     int ReleaseYear;
 
     bool IsClassic;
+
+    string Genre;
 };
 
 //Integral data type with named values
@@ -236,7 +238,38 @@ int main()
             };
         };
     };
+    cin.ignore();
 
+    ////Get genre(s)
+    //int genreCount = 0;
+    //while (genreCount < 5)  // = 0, < N (rarely) = 1, <= N
+    //{
+    //    cout << "Enter optional genre: " << (genreCount + 1) << ": ";
+
+    //    string genre;
+    //    getline(cin, genre);
+    //    if (genre != "")
+    //    {
+    //        movie.Genre += genre + ", ";
+    //    };
+
+    //    genreCount++;   //prefix/postfix
+    //}
+                                                                                                                            //take note of this section for lab 2
+    //for loop - designed to iterate a fixed number of times with a well known start and end
+    int genreIndex = 0;
+    for (genreIndex = 0; genreIndex < 5; genreIndex++)  // = 0, < N (rarely = 1, <= N
+    {
+        cout << "Enter optional genre " << (genreIndex + 1) << ": ";
+
+        string genre;
+        getline(cin, genre);
+        if (genre != "")
+        {
+            movie.Genre += genre + ", ";
+        };
+    };
+                                                                                                                            // take note
     ///// Display movie details
     cout << "---------------" << endl;
     cout << movie.Title << " (" << movie.ReleaseYear << ")" << endl;
@@ -262,7 +295,8 @@ int main()
     //Shortest form using conditional operator => Eb ? Et : Ef  
     // Et & Ef = must be the exact same type, type coercion is not allowed  
     cout << "Is Classic? " << (movie.IsClassic ? "Yes" : "No") << endl;
-
+    if (movie.Genre != "")
+        cout << "Genre(s) " << movie.Genre << endl;
     if (movie.Description != "")
         cout << movie.Description << endl;
     cout << "---------------" << endl;

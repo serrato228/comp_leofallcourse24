@@ -69,4 +69,8 @@ int main()
     cout << setw(48) << setfill('-') << "" << setfill(' ') << endl;
     cout << fixed << setprecision(2);
     //cout << setw(6) << "1" << setw(8) << initialLoan
+   /* for (monthIndex = 0; monthIndex < 12; monthIndex++)
+    {
+        cout << "Enter "
+    }*/
 }
