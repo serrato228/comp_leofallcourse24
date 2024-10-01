@@ -257,10 +257,10 @@ int main()
     //}
                                                                                                                             //take note of this section for lab 2
     //for loop - designed to iterate a fixed number of times with a well known start and end
-    int genreIndex = 0;
-    for (genreIndex = 0; genreIndex < 5; genreIndex++)  // = 0, < N (rarely = 1, <= N
+    //int genreIndex = 0;
+    for (int index = 0; index < 5; ++index)  // = 0, < N (rarely = 1, <= N
     {
-        cout << "Enter optional genre " << (genreIndex + 1) << ": ";
+        cout << "Enter optional genre " << (index + 1) << ": ";
 
         string genre;
         getline(cin, genre);
@@ -268,6 +268,13 @@ int main()
         {
             movie.Genre += genre + ", ";
         };
+    };
+    //cout << genreIndex;
+
+    //More complex for loops
+    for (int index = 0; int y = 1; index < 5, index < y; ++index, y+=2)  // = 0, < N (rarely = 1, <= N
+    {
+
     };
                                                                                                                             // take note
     ///// Display movie details
