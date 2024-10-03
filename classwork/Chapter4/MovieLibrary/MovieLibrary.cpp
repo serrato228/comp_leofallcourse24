@@ -76,6 +76,27 @@ int main()
     //cout << left << " != " << right << " = " << (left != right) << endl;
     //cout << endl;
 
+    //Nested loop demo
+    int iterations = 0;
+    for (int i = 0; i < 100; ++i)
+    {
+        if (i != 0)
+        {
+            char choice;
+            cout << "Do you want to give up?";
+            cin >> choice;
+            if (choice == 'Y' || choice == 'y')
+                break;
+        };
+
+        for (int j = 0; j < 100; ++j)
+        {
+            ++iterations;
+            cout << i << ", " << j << " = " << iterations << endl;
+        };
+    };
+    cout << "Total iterations = " << iterations << endl;
+
     //// Show menu
     cout << "Movie Library" << endl;
     cout << "---------------" << endl;
@@ -91,9 +112,9 @@ int main()
     MenuCommand menuCommand = (MenuCommand)0;
     //bool done = false;
     //while (!done)
-    //while (menuCommand == 0); infinite loop. don't do it
+    //while (menuCommand == 0); infinite loop, don't do it
 
-    while (menuCommand == 0)
+    do
     {
         char input;
         cin >> input;
@@ -114,7 +135,7 @@ int main()
 
             default: cout << "Bad input" << endl; break;
         };
-    };
+    } while (menuCommand == 0);
     cin.ignore();
 
     //int shouldntWork = MenuCommand::MC_AddMovie;
@@ -134,7 +155,8 @@ int main()
     Movie movie;// = {0};
 
     //Get required title
-    while (movie.Title == "")
+    //while (movie.Title == "")
+    do
     {
         cout << "Enter a title: ";
         //cin >> movie.Title;
@@ -144,11 +166,11 @@ int main()
         // if-stmt ::= if (Eb) S ;
         if (movie.Title == "")
             cout << "ERROR: Title is required" << endl;
-    };
+    } while (movie.Title == "");
 
     //Get run length, at least 0, minutes
-    movie.RunLength = -1;
-    while (movie.RunLength < 0 || movie.RunLength > 1440)
+    //movie.RunLength = -1;
+    do //while (movie.RunLength < 0 || movie.RunLength > 1440)
     {
         cout << "Enter run length (in minutes): ";
         cin >> movie.RunLength;
@@ -174,7 +196,7 @@ int main()
         //};
         if (movie.RunLength < 0 || movie.RunLength > 1440)
             cout << "ERROR: Run length must be between 0 and 1440" << endl;
-    };
+    } while (movie.RunLength < 0 || movie.RunLength > 1440);
 
     //Get release year, at least 1900
     while (movie.ReleaseYear < 1900 || movie.ReleaseYear > 2100)
@@ -240,11 +262,11 @@ int main()
     };
     cin.ignore();
 
-    ////Get genre(s)
+    //Get genre(s)
     //int genreCount = 0;
-    //while (genreCount < 5)  // = 0, < N (rarely) = 1, <= N
+    //while (genreCount < 5)   // = 0, < N  (rarely) = 1, <= N
     //{
-    //    cout << "Enter optional genre: " << (genreCount + 1) << ": ";
+    //    cout << "Enter optional genre " << (genreCount + 1) << ": ";
 
     //    string genre;
     //    getline(cin, genre);
@@ -253,30 +275,30 @@ int main()
     //        movie.Genre += genre + ", ";
     //    };
 
-    //    genreCount++;   //prefix/postfix
-    //}
-                                                                                                                            //take note of this section for lab 2
-    //for loop - designed to iterate a fixed number of times with a well known start and end
+    //    genreCount++;  //prefix/postfix
+    //};
+
+    //for loop - designed to iterate a fixed number of times with a well known start and end    
     //int genreIndex = 0;
-    for (int index = 0; index < 5; ++index)  // = 0, < N (rarely = 1, <= N
+    for (int index = 0; index < 5; ++index)  // = 0, < N  (rarely) = 1, <= N
     {
         cout << "Enter optional genre " << (index + 1) << ": ";
 
         string genre;
         getline(cin, genre);
-        if (genre != "")
-        {
-            movie.Genre += genre + ", ";
-        };
+        if (genre == "")
+            break; //Exits the loop
+        //continue;  //Loops only - stops the current iteration and loops again
+
+        movie.Genre += genre + ", ";
     };
     //cout << genreIndex;
 
     //More complex for loops
-    for (int index = 0; int y = 1; index < 5, index < y; ++index, y+=2)  // = 0, < N (rarely = 1, <= N
-    {
+    //for (int index = 0, int y = 1; index < 5, index < y; ++index, y+=2) {};
+    //int someIndex = 0;
+    //for (;;) {};  //infinite loop
 
-    };
-                                                                                                                            // take note
     ///// Display movie details
     cout << "---------------" << endl;
     cout << movie.Title << " (" << movie.ReleaseYear << ")" << endl;

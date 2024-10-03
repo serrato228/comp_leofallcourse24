@@ -68,6 +68,15 @@ int main()
     cout << left << setw(6) << "Month" << setw(10) << "Balance" << setw(10) << "Payment" << setw(10) << "Interest" << setw(12) << "New Balance" << endl;
     cout << setw(48) << setfill('-') << "" << setfill(' ') << endl;
     cout << fixed << setprecision(2);
+
+    for (int index = 0; index < 12; ++index)
+    {
+        cout << setw(6) << index << setw(8) << initialLoan << 
+    }
+
+
+
+
     //cout << setw(6) << "1" << setw(8) << initialLoan
    /* for (monthIndex = 0; monthIndex < 12; monthIndex++)
     {
