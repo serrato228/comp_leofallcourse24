@@ -71,8 +71,8 @@ int main()
 
     for (int index = 0; index < 12; ++index)
     {
-        cout << setw(6) << index << setw(8) << initialLoan << 
-    }
+        cout << setw(6) << index << setw(8) << initialLoan <<
+    };
 
 
 
