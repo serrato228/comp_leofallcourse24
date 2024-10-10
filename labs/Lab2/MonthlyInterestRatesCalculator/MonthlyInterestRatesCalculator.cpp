@@ -4,9 +4,11 @@
  */
 #include <iostream>
 #include <iomanip>
+
 using namespace std;
 
-int main() {
+int main() 
+{
     // Program Information
     cout << "Monthly Interest Rate Calculator" << endl;
     cout << "Leonardo Serrato" << endl;
@@ -55,7 +57,7 @@ int main() {
     double totalInterest = 0.0;
 
     // Loop through each month
-    for (int month = 1; month <= 12; ++month) 
+    for (int month = 1; month <= 12; ++month)
     {
         double interest = 0.0;
         double payment = monthlyPayment;
@@ -68,7 +70,7 @@ int main() {
         }
 
         // If balance is less than the payment, adjust the payment
-        if (balance < monthlyPayment) 
+        if (balance < monthlyPayment)
         {
             payment = balance; //this makes it so that the balance never becomes a negative number as the payment will never be more than is required to be paid towards the balance
         }
@@ -101,6 +103,6 @@ int main() {
     }
 
     // Totals
-    cout << setw(75) << setfill('-') << "" << setfill(' ') << endl;
+    //cout << setw(75) << setfill('-') << "" << setfill(' ') << endl;     //I thought it would look neater with this but im not sure if we are allowed some free room in labs
     cout << "Total" << setw(23) << "" << "$" << setw(17) << totalPayments << "$" << setw(17) << totalInterest << endl;
 }
