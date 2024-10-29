@@ -53,7 +53,65 @@ void TestPassReference()
     Display(rc);
 }
 
+void GradeArrayDemo()
+{
+    const int MaxGrades = 20;
+    double dummyValue2 = -1;
+    int grades[MaxGrades];
+    double dummyValue = 0;
+
+    int estimatedMaxArraySize = //Size of array / size of element
+        sizeof(grades) / sizeof(int);
+    int count = 0;
+    for (int index = 0; index < MaxGrades; ++index)//, ++count)
+    {
+        cout << "Enter a grade: ";
+        cin >> grades[index];
+        //grades[index] = 100;
+
+        if (grades[index] <= 0)
+            break;
+
+        ++count;
+    };
+
+    //for (int index = 0; index < MaxGrades; ++index) for entire array
+    for (int index = 0; index < count; ++index)                                 //will possibly come in handy for lab 4. take notice of this code as it will come in useful
+    {
+        cout << grades[index] << endl;
+    };
+
+    int indexToChange;
+    do
+    {
+        cout << "Enter the index of the grade to change: ";
+        cin >> indexToChange;
+    } while (indexToChange < 0 || indexToChange >= MaxGrades);
+
+    int newGrade;
+    cout << "Enter the new grade: ";
+    cin >> newGrade;
+
+    grades[indexToChange] = newGrade;
+
+}
+
+void InitArrayDemo()
+{
+    const int MaxRates = 100;
+    double payRates[MaxRates] = {0};    //Zero initialize
+
+    //// Zero init
+    //for (int index = 0; index < MaxRates; ++index)                    the code in line 101 - 102 can replace this one
+    //    payRates[index] = 0;
+}
+
 int main()
+{
+    InitArrayDemo();
+}
+
+void NameArrayDemo()
 {
     //Array is a set of related data
     /*string student1;
