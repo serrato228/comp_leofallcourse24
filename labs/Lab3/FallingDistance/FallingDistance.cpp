@@ -1,5 +1,9 @@
-// FallingDistance.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+/*
+Lab 3
+Leonardo Serrato
+COSC 1436 Fall 2024
+*/
+
 #include <iostream>
 #include <iomanip>
 #include <string>
