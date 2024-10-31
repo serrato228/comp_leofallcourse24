@@ -89,9 +89,9 @@ int main()
     // Prompt for and validate falling time
     int timeInSeconds = ReadInt("Please enter the number of seconds (1-60): ", 1, 60);              //this establishes the minValue and maxValue from earlier
 
-    // Prompt for unit selection
+    // Prompt for unit selection (m for meters or f for feet)
     char unit = ReadUnits();
 
-    // Display falling distance table
+    // Displays the falling distance table
     DisplayDistanceTable(timeInSeconds, unit);
 }
