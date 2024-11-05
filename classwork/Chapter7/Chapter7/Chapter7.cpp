@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <string>
 #include <iomanip>
@@ -200,9 +199,69 @@ void UseArrayDemo()
     CopyArray(array3, 20, array2, 20);
 }
 
+void DisplayArray(int values[], int size, int valueWidth, int maxCellsPerRow)
+{
+    for (int index = 0; index < size; ++index)
+    {
+        std::cout << std::setw(valueWidth) << values[index] << " ";
+
+        //IF we have printed out maxCellsPerRow values, then newline
+        //if (index > 0 && index % maxCellsPerRow == 0)
+        if ((index + 1) % maxCellsPerRow == 0)
+            std::cout << std::endl;
+    };
+
+    std::cout << std:: right << std::endl;
+}
+
+//Multi-D table passed like single-D tables
+//All dimensions other than rows must be fixed at compile time
+void DisplayTable(int values[][10], int size)
+{
+    for (int row = 0; row < size; ++row)
+        DisplayArray(values[row], 10, 5, 10);
+        //for (int col = 0; col < 10; ++col)
+            ;
+}
+
+void TableDemo()
+{
+    /*int values[] = {1, 2, 3, 4, 5};
+    DisplayArray(values, 5, 10, 3);*/
+
+    //[rows][cols] - complile time for all dimensions
+    int multiplyTable[50][10] = {
+                                {1, 2, 3, 4, 5}
+                              , {2, 4, 6, 8, 10}
+                                };
+
+    //Init values
+    // Row major ordering - rows are enumerated, then columns
+    for (int row = 0; row < 5; ++row)
+        for (int col = 0; col < 10; ++col)
+            multiplyTable[row][col] = (row + 1) * (col + 1);
+
+    //Don't do this...
+    // Column major ordering - columns are enumerated, then rows
+    //for (int col = 0; col < 5; ++col)
+    //    for (int row = 0; row < 10; ++row)
+    //        multiplyTable[row][col] = (row + 1) * (col + 1);
+
+    //Display Table
+    //DisplayTable(multiplyTable, 5);
+    /*for (int row = 0; row < 5; ++row)
+    {
+        for (int col = 0; col < 10; ++col)
+            std::cout << std::setw(5) << multiplyTable[row][col];
+
+        std::cout << std::endl;
+    }*/
+}
+
 int main()
 {
     UseArrayDemo();
+    TableDemo();
 }
 
 void NameArrayDemo()
