@@ -211,6 +211,8 @@ void InitializeEmployeeByRef(int& employee)
     cin >> employee;
 };
 
+// Employee is pass by value (memory address)
+// When dereferencing the pointer then any changes to value are visible to caller
 void InitializeEmployeeByPtr(int* employee)
 {
     //Validate pointer
