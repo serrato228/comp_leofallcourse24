@@ -101,10 +101,75 @@ void WideCharDemo()
     };
 }
 
+// "C" strings - 
+// C++ strings only work in C++
+// #include <cstring>
+//  strlen(const char*) size_t ::= returns number of characters
+void CStringDemo()
+{
+    const char* name = "Bob"; //const char*
+    char nameArray[] = "Bob";
+
+    const int MaximumName = 101;
+    char buffer[MaximumName] = {0};
+
+    char firstName[MaximumName] = {0};
+    cout << "Enter first name: ";
+    cin >> firstName;
+
+    char lastName[MaximumName] = {0};
+    cout << "Enter last name: ";
+    cin >> lastName;
+
+    char fullName[MaximumName + MaximumName] = {0};
+
+    //Copy and concat
+    //strcpy(fullName, firstName);
+    strncpy_s(fullName, firstName, MaximumName);
+    strcat_s(fullName, " ");
+    strncat_s(fullName, lastName, MaximumName);
+
+    cout << fullName << endl;
+
+    //Comparison
+    //if (firstName == lastName)
+    if (_stricmp(firstName, lastName) == 0)
+        cout << lastName << endl;
+    else
+        cout << fullName << endl;
+
+    //Find in string
+    char productName[] = "Microsoft Windows 11";
+    char operatingSystem[] = "Windows";
+
+    char* pPos = strstr(productName, operatingSystem);
+    if (pPos != nullptr)
+        cout << pPos << endl;
+}
+
+void NumberStringDemo();
+{
+    while (true)
+    {
+        char buffer[100] = {0};
+
+        cout << "Enter a number: ";
+        cin >> buffer;
+
+        // Conversion
+        //  atoi(const char*) int :: Converts string to int
+        //bool isNUmber = IsIntegral()
+        int value = atoi(buffer);
+        cout << "Value as int = " << value << endl;
+    };
+}
+
 int main()
 {
     //CharDemo();
-    WideCharDemo();
+    //WideCharDemo();
     //StringDemo();
+    //CStringDemo();
+    NumberStringDemo();
 }
 
