@@ -48,7 +48,9 @@ int getUserValues(int arr[], int maxSize)
 // Displays the main menu and proides the user with a choice, I added the (sum all values) since it confused me if the A was more adding more values to the array or if it was for adding all the values the user provided
 char displayMenu() 
 {
+    cout << endl;
     cout << "Main Menu" << endl;
+    cout << "---------------" << endl;
     cout << "A) Add (Sum all values)" << endl;
     cout << "L) Largest" << endl;
     cout << "S) Smallest" << endl;
